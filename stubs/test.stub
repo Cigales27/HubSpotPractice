@@ -1,0 +1,52 @@
+<?php
+
+namespace {{ namespace }};
+
+use Tests\TestCase;
+use App\Enums\HttpStatusEnum;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+/**
+ * php artisan test {{ namespace }}\{{ class }}.php
+ */
+class {{ class }} extends TestCase
+{
+    /**
+     * Default headers
+     *
+     * @var array
+     */
+    protected $defaultHeaders = [
+        'Accept'      => 'application/json',
+        'sessionData' => 'INGRESA EL JWT'
+    ];
+
+    /**
+     * Router
+     *
+     * @var array
+     */
+    protected $router = 'routeName';
+
+    /**
+     * testExample
+     *
+     * @test
+     */
+    public function testExample()
+    {
+        $this->logInitMethod();
+
+        # Given
+        $path = '/';
+
+        # When
+        $response = $this->get($path);
+
+        # Then
+        $response->assertStatus(200);
+
+        $this->logEndMethod();
+    }
+}

@@ -1,0 +1,19 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class {{ class }} extends Controller
+{
+    /**
+     * Construct
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    //
+}

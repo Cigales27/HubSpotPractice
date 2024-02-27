@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Traits\Controllers;
+
+/**
+ * Trait {{ traitName }}
+ * 
+ * @package App\Http\Controllers
+ */
+trait {{ traitClassName }}
+{
+   /**
+    * Example method
+    * 
+    * @return <type> $example
+    */
+   private function exampleMethod()
+   {
+      //return [];
+   }
+}

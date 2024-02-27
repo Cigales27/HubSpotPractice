@@ -1,0 +1,33 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Services\LogService;
+use App\Traits\Validations;
+use Illuminate\Support\Facades\DB;
+
+class {{ serviceClassName }}
+{
+    use Validations;
+
+    public function foo(array $params, bool $validate = true): array
+    {
+        $rules = []; // MyClassRequest::rules()
+        if($validate) $params = $this->validateParams($params, $rules);
+        LogService::log()->debug('Inicia foo', '');
+        $result = [];
+
+        try {
+            DB::beginTransaction();
+            // do something ...
+            $result = ['bar'];
+            DB::commit();
+        } catch (\Throwable $err) {
+            LogService::log()->debug('foo ha fallado', '');
+            DB::rollBack();
+            throw $err;
+        }
+
+        return $result;
+    }
+}

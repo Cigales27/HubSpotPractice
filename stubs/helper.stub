@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Helpers;
+
+class {{ className }}
+{
+    /**
+     * Construct.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Example method
+     * 
+     * @return <type> $example
+     */
+    public static function exampleMethod()
+    {
+        //return [];
+    }
+}
